@@ -1,12 +1,14 @@
 package week1;
 
 public class Climbing_Stairs_70 {
+    //求出走到第n阶台阶有多少种走法
     public static void main(String[] args) {
 //        System.out.println(solution_1(8));
 //        System.out.println(solution_2(2));
         System.out.println(solution_3(1));
     }
 
+    //递归实现
     public static int solution_1(int n) {
         if (n == 1) {
             return 1;
@@ -17,6 +19,7 @@ public class Climbing_Stairs_70 {
         return (solution_1(n - 1) + solution_1(n - 2));
     }
 
+    //动态规划实现
     public static int solution_2(int n) {
         if (n == 1) {
             return 1;
@@ -30,6 +33,7 @@ public class Climbing_Stairs_70 {
         return dp[n - 1];
     }
 
+    //滚动数组实现
     public static int solution_3(int n) {
         int x = 0;
         int y = 0;

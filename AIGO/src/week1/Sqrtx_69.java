@@ -1,14 +1,17 @@
 package week1;
 
 public class Sqrtx_69 {
+    //求 x 的平方根
     public static void main(String[] args) {
 //        System.out.println(solution_1(2147395600));
 //        System.out.println(289399L*289399L);
 //        System.out.println(solution_3(2147483647));
-        System.out.println(solution_4(2147483647));
+//        System.out.println(solution_4(2147483647));
+        System.out.println(solution_5(3));
 
     }
 
+    //从零到 x 遍历
     public static int solution_1(int x) {
         long i = 1;
         long y = (long) x;
@@ -19,6 +22,7 @@ public class Sqrtx_69 {
         return j - 1;
     }
 
+    //二分查找实现
     public static int solution_2(int x) {
         if (x == 1) {
             return 1;
@@ -40,6 +44,7 @@ public class Sqrtx_69 {
         return mid;
     }
 
+    //二分查找实现
     public static int solution_3(int x) {
         int l = 0, r = x, ans = -1;
         while (l <= r) {
@@ -54,6 +59,7 @@ public class Sqrtx_69 {
         return ans;
     }
 
+    //牛顿迭代法实现
     public static int solution_4(int x) {
         double x_n = x;
         double y_n = (x_n + (x / x_n)) / 2;
@@ -65,6 +71,16 @@ public class Sqrtx_69 {
         }
         System.out.println(y_n);
         return (int) y_n;
+    }
+
+    //牛顿迭代法实现
+    public static int solution_5(int x){
+        double root = x/2;
+        for (int i = 0; i < 20; i++) {
+            root = 0.5*(root+(x/root));
+        }
+        System.out.println(root);
+        return (int)root;
     }
 
 }

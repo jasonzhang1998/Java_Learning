@@ -1,11 +1,13 @@
 package week2;
 
 public class Reverse_Integer_7 {
+    //整数反转
     public static void main(String[] args) {
 //        System.out.println(-56%10);
         System.out.println(solution_2(2147483646));
     }
 
+    //先展开求出每一位的数，再乘在一起
     public static int solution_1(int x) {
         int[] a = new int[32];
         int i = 0;
@@ -24,6 +26,8 @@ public class Reverse_Integer_7 {
             return 0;
         }
     }
+
+    //在取余的时候同时去乘，判断是否有溢出现象
     public static int solution_2(int x){
         int rev = 0;
         while (x != 0) {

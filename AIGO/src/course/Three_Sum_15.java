@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Three_Sum_15 {
     public static void main(String[] args) {
-        int[] nums = new int[]{-1,0,1,2,-1,-4,-2,-3,3,0,4};
+        int[] nums = new int[]{-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4};
         System.out.println(solution_2(nums));
     }
 

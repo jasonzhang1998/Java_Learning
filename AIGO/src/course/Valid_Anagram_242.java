@@ -11,7 +11,7 @@ public class Valid_Anagram_242 {
 
     public static boolean solution_1(String s, String t) {
         //判断两个字符串的长度是否相同，不同则直接返回false
-        if(s.length()!=t.length()){
+        if (s.length() != t.length()) {
             return false;
         }
         //使用一个数组来存放26个英文字母出现的次数
@@ -20,12 +20,12 @@ public class Valid_Anagram_242 {
         int pos = 0;
         //遍历字符串s，每个字母出现一次，该字母对应的数组元素便加一
         for (int i = 0; i < s.length(); i++) {
-            pos = s.charAt(i)-'a';
+            pos = s.charAt(i) - 'a';
             count[pos]++;
         }
         //遍历字符串t，每个字母出现一次，该数组对应的数组元素则减一
         for (int i = 0; i < t.length(); i++) {
-            pos = t.charAt(i)-'a';
+            pos = t.charAt(i) - 'a';
             count[pos]--;
             /*
             遍历一遍s之后，所有字母出现的次数已经被统计完，若两个字符串
@@ -33,14 +33,15 @@ public class Valid_Anagram_242 {
             数和负数。因此通过判断数组中是否存在负数值就可以判断两个字符
             串是否相同。
             */
-            if(count[pos]<0){
+            if (count[pos] < 0) {
                 return false;
             }
         }
         return true;
     }
+
     //使用unicode的字符，即不只是26个英文字母的情况时
-    public static boolean solution_2(String s,String t) {
+    public static boolean solution_2(String s, String t) {
         //判断两个字符串的长度是否相同，不同则直接返回false
         if (s.length() != t.length()) {
             return false;
