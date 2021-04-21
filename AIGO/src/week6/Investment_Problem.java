@@ -1,5 +1,7 @@
 package week6;
 
+import java.util.Arrays;
+
 public class Investment_Problem {
     public static void main(String[] args) {
         //定义效益函数
@@ -12,7 +14,7 @@ public class Investment_Problem {
         int m = f.length;
         int n = f[0].length;
         int temp = 0;
-        int val =0;
+        int val = 0;
         int[][] ans = new int[m][n];
         //处理边界条件
         for (int i = 0; i < m; i++) {
@@ -24,14 +26,17 @@ public class Investment_Problem {
                 temp = 0;
                 for (int k = 0; k <= j; k++) {
                     //枚举收益，求max
-                    val = f[k][i]+ans[j-k][i-1];
-                    if(val>temp){
+                    val = f[k][i] + ans[j - k][i - 1];
+                    if (val > temp) {
                         temp = val;
                     }
                 }
                 ans[j][i] = temp;
             }
         }
-        return ans[m-1][n-1];
+        for (int i = 0; i < m; i++) {
+            System.out.println(Arrays.toString(ans[i]));
+        }
+        return ans[m - 1][n - 1];
     }
 }
