@@ -74,13 +74,13 @@ public class Sqrtx_69 {
     }
 
     //牛顿迭代法实现
-    public static int solution_5(int x){
-        double root = x/2;
+    public static int solution_5(int x) {
+        double root = x / 2;
         for (int i = 0; i < 20; i++) {
-            root = 0.5*(root+(x/root));
+            root = 0.5 * (root + (x / root));
         }
         System.out.println(root);
-        return (int)root;
+        return (int) root;
     }
 
 }

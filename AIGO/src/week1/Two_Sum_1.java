@@ -2,7 +2,6 @@ package week1;
 
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Two_Sum_1 {
     //两数之和问题
